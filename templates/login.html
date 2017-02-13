@@ -35,7 +35,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-//body {background-image:"Pantry.jpg"}
+//body {background-image:"Pantry.jpeg"}
 
 
 
@@ -88,8 +88,8 @@ h2 {
 
 
 
-
-<img class = 'bg' src = "Pantry.jpg"/>
+<form action="{{ url_for('login') }}" method="POST">
+ <img class = 'bg' src = "Pantry.jpeg"/>
   <div class="container">
     <label><b>Username </b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
@@ -99,6 +99,6 @@ h2 {
     <button type="submit" class="loginbtn"> Login </button>
         
   </div>
-
+</form>
 </body>
 </html>
