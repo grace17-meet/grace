@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
 
+
 Base = declarative_base()
 
 
@@ -23,6 +24,7 @@ class Recipe(Base):
 	description = Column(String(255))
 	nationality = Column(String(255))
 	user = relationship("User", back_populates ="recipe")
+	history = Column(String(255))
 
 class Order(Base):
 	__tablename__='order'
