@@ -6,6 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from werkzeug.utils import secure_filename
 import locale, os
+from database import *
 # from werkzeug.contrib.fixers import ProxyFix
 # from flask_dance.contrib.github import make_github_blueprint, github
 Base = declarative_base()
@@ -42,10 +43,10 @@ def newTaster():
 		if name =="" or email == "" or password == "":
 			flash ("Your missing some arguments")
 			return redirect(url_for('newTaster'))
-		if session.query(Customer).filter_by(email = email).first() is not None:
+		if session.query(User).filter_by(email = email).first() is not None:
 			flash("A user with this email already exists")
 			return redirect(url_for('newTaster'))
-		taster = Taster(name = name, email = email, address = address)
+		taster = User(name = name, email = email, address = address)
 		taster.hash_password(password)
 		session.add(taster)
 		session.commit()
@@ -95,8 +96,8 @@ def history():
 
 @app.route("/aboutme")
 def aboutme():
-	aboutme = session.query(Aboutme).all()
-	return render_template('aboutme.html', aboutme= aboutme)
+	#aboutme = session.query(Aboutme).all()
+	return render_template('aboutme.html')
 @app.route("/addrecipe")
 def addrecipe():
 	addrecipe = session.query(Addrecipe).all()

@@ -14,7 +14,7 @@ class User(Base):
 	email = Column(String(255))
 	mailaddress = Column(String(255))
 	password = Column(String(255))
-	user = relationship("User", back_populates ="user")
+	#user = relationship("User", back_populates ="user")
 
 class Recipe(Base):	
 	__tablename__= 'recipe'
@@ -25,8 +25,14 @@ class Recipe(Base):
 	nationality = Column(String(255))
 	user = relationship("User", back_populates ="recipe")
 	history = Column(String(255))
+class addrecipe(Base):
+	__tablename__ ='addrecipe'
+	id = Column(Integer, primary_key=True)
+	user_id = Column(Integer, ForeignKey('user.id'))
+	description = Column(String(255))
 
-class Order(Base):
+
+#class Order(Base):
 	__tablename__='order'
 	id = Column(Integer, primary_key=True)
 	name = Column(String(255))

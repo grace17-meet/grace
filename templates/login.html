@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-
+<!DOCTYPE html>
+<html>
 <style>
 
 img.bg {
@@ -18,7 +19,7 @@ img.bg {
             left: 0;
             z-index: -2;
             
-        }
+ }
 
 
 
@@ -35,7 +36,6 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-//body {background-image:"Pantry.jpeg"}
 
 
 
@@ -78,14 +78,17 @@ h2 {
     font-family: courier;
     font-size: 50px
 }
-
+  
 
 </style>
 
 
-<body>
+<body bgcolor="#F9E8D1">
+
+
 <h2> Sign in </h2> 
 
+  <img src="static/hey.gif" alt="hey" width="200" height="200" align="middle">
 
 
 <form action="{{ url_for('login') }}" method="POST">
@@ -97,6 +100,7 @@ h2 {
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
     <button type="submit" class="loginbtn"> Login </button>
+  
         
   </div>
 </form>

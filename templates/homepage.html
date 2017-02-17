@@ -10,7 +10,7 @@
 </head>
 <style> 
 
-  img.bg {
+  #img.bg {
            /* Set rules to fill background */
             min-height: 100%;
             min-width: 1024px;
@@ -27,9 +27,11 @@
             
              }
 
+
 </style>
 
-<body background="pale.jpeg">
+
+<body background="static/pale.jpeg">
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -38,9 +40,10 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="homepage.html">Home</a></li>
-      <li><a href="aboutme.html">About me</a></li>
+      <li><a href="{{url_for('aboutme')}}">About me</a></li>
       <li><a href="{{url_for('recipes')}}">recipes</a></li>
       <li><a href="{{url_for('history')}}">history</a></li>
+      <li><a href="{{url_for('addrecipe')}}">add recipe </a></li>
          <ul class="nav navbar-nav navbar-right">
       <li><a href="{{url_for('newTaster')}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="{{url_for('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -48,15 +51,12 @@
   </div>
 </nav>
 <h2> Welcome to TASTEPAL </h2>
-<p>  let's start TASTINNNNNGGGGG!!</p>
+<br><p>  let's start TASTINNNNNGGGGG!!</p><br>
 <p> in this website you will meet our culture, The palestinian culture, learn new recipes and add your own recipes! </p>
-
-
-
     </ul>
   </div>
 </nav>
- >
+
 
 </body>
 </html>
